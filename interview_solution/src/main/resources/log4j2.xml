@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration status="INFO" monitorInterval="30">
+	<Properties>
+		<Property name="log-path">C:/ALL_DATA/TEST/intrvw_sma/restaurant_input_bills/logs</Property>
+	</Properties>
+	<Appenders>
+		<Console name="console-log" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %p [%t][%c{3.}] - %m%n" />
+		</Console>
+		<RollingFile name="engine-log" filePattern="${log-path}/engine-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="%d %p [%t][%c{3.}] - %encode{%m}%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+			<DirectWriteRolloverStrategy maxFiles="20" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="DEBUG" additivity="false">
+			<AppenderRef ref="console-log" />
+			<AppenderRef ref="engine-log" />
+		</Root>
+		<logger level="DEBUG" name="org.springframework.boot" />
+		<logger level="DEBUG" name="org.intvw.searchpartner"
+			additivity="false">
+			<AppenderRef ref="console-log" />
+			<AppenderRef ref="engine-log" />
+		</logger>
+	</Loggers>
+</Configuration>

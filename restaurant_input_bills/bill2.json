@@ -1,0 +1,21 @@
+{
+  "cmfoodchain": {
+    "branch": {
+      "location": "\"Mumbai\"",
+      "totalcollection": “124.00”,
+      "locationid": "BOM-1234-457"
+    },
+    "orders": {
+      "orderdetail": [
+        {
+          "orderid": 1,
+          "billamount": “62.00”
+        },
+        {
+          "orderid": 2,
+          "billamount": “70.00”
+        }
+      ]
+    }
+  }
+}
